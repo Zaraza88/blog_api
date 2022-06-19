@@ -50,7 +50,7 @@
 ```
 2. Создать суперюзера
 ```
-   ./manage.py create superuser
+   ./manage.py createsuperuser
 ```
 3. Запустить сервер
 ```
