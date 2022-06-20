@@ -88,14 +88,6 @@ class PostSerializaers(serializers.ModelSerializer):
     def get_count_all_dislikes(self, instans):
         return Like.objects.all().filter(post=instans).filter(like='dislike').count()
 
-    def create(self, validated_data):
-        like_or_dislike = Like.objects.update_or_create(
-            user=validated_data.get('user'),
-            post_id=validated_data.get('post_id'),
-            defaults={'like': validated_data.get('like')}
-        )
-        return like_or_dislike
-
 
 class PostCreateSerializers(serializers.ModelSerializer):
     """Добавление постов"""
